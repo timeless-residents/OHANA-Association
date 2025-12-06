@@ -1,1 +1,1424 @@
-12
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OHANA Association | Community Resilience & Gift Economy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-ocean-deep: #0f2a38;
+            --color-ocean-mid: #1e4a5c;
+            --color-ocean-text: #3d6a7a;
+            --color-sunset-gold: #d4922a;
+            --color-sunset-coral: #c95d3f;
+            --color-sand-light: #f7f2ea;
+            --color-sand-warm: #ebe0ce;
+            --color-palm-green: #3a6347;
+            --color-plumeria-white: #fefcf9;
+            --color-lava-black: #1a1a1a;
+            --color-text-muted: #4a5a62;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+        }
+
+```
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+        background-color: #fefcf9;
+        color: var(--color-lava-black);
+        line-height: 1.7;
+        overflow-x: hidden;
+    }
+
+    /* Animated Background Pattern */
+    .bg-pattern {
+        display: none;
+    }
+
+    /* Header */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        padding: 1.5rem 3rem;
+        background: rgba(254, 252, 249, 0.9);
+        backdrop-filter: blur(20px);
+        transition: all 0.4s ease;
+    }
+
+    header.scrolled {
+        padding: 1rem 3rem;
+        box-shadow: 0 4px 30px rgba(26, 58, 74, 0.08);
+    }
+
+    nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, var(--color-sunset-gold) 0%, var(--color-sunset-coral) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        box-shadow: 0 4px 15px rgba(232, 168, 73, 0.3);
+    }
+
+    .logo-text {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--color-ocean-deep);
+        letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        list-style: none;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: var(--color-text-muted);
+        font-weight: 500;
+        font-size: 0.95rem;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--color-sunset-gold);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--color-ocean-deep);
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+    .nav-cta {
+        background: linear-gradient(135deg, var(--color-sunset-gold) 0%, var(--color-sunset-coral) 100%);
+        color: white !important;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(232, 168, 73, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-cta::after {
+        display: none !important;
+    }
+
+    .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(232, 168, 73, 0.4);
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        padding: 8rem 3rem 4rem;
+        position: relative;
+        overflow: hidden;
+        background: var(--color-plumeria-white);
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--color-sand-light) 0%, var(--color-sand-warm) 100%);
+        clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    .hero-wave {
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        z-index: 1;
+    }
+
+    .hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .hero-text h1 {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 700;
+        color: var(--color-ocean-deep);
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-text h1 span {
+        color: var(--color-sunset-coral);
+        font-style: italic;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+        color: var(--color-text-muted);
+        margin-bottom: 2rem;
+        max-width: 520px;
+    }
+
+    .hero-tagline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--color-sand-warm);
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        color: var(--color-palm-green);
+        font-weight: 600;
+        margin-bottom: 2rem;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(135deg, var(--color-ocean-deep) 0%, var(--color-ocean-mid) 100%);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(26, 58, 74, 0.25);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(26, 58, 74, 0.35);
+    }
+
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: transparent;
+        color: var(--color-ocean-deep);
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 2px solid var(--color-ocean-deep);
+        transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background: var(--color-ocean-deep);
+        color: white;
+    }
+
+    .hero-visual {
+        position: relative;
+    }
+
+    .hero-image-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .hero-circle {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--color-sunset-gold) 0%, var(--color-sunset-coral) 100%);
+        opacity: 0.15;
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    .hero-circle-1 {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .hero-circle-2 {
+        width: 80%;
+        height: 80%;
+        top: 10%;
+        left: 10%;
+        animation-delay: 0.5s;
+    }
+
+    .hero-circle-3 {
+        width: 60%;
+        height: 60%;
+        top: 20%;
+        left: 20%;
+        animation-delay: 1s;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 0.15; }
+        50% { transform: scale(1.05); opacity: 0.25; }
+    }
+
+    .hero-icon-main {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 8rem;
+        filter: drop-shadow(0 10px 30px rgba(0,0,0,0.1));
+        animation: gentleFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes gentleFloat {
+        0%, 100% { transform: translate(-50%, -50%); }
+        50% { transform: translate(-50%, calc(-50% - 15px)); }
+    }
+
+    .floating-icons {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .float-icon {
+        position: absolute;
+        font-size: 2.5rem;
+        animation: floatAround 6s ease-in-out infinite;
+    }
+
+    .float-icon-1 { top: 5%; left: 10%; animation-delay: 0s; }
+    .float-icon-2 { top: 15%; right: 5%; animation-delay: 1s; }
+    .float-icon-3 { bottom: 20%; left: 0%; animation-delay: 2s; }
+    .float-icon-4 { bottom: 10%; right: 10%; animation-delay: 3s; }
+
+    @keyframes floatAround {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(5px, -10px) rotate(5deg); }
+        50% { transform: translate(-5px, -5px) rotate(-5deg); }
+        75% { transform: translate(10px, 5px) rotate(3deg); }
+    }
+
+    /* About Section */
+    .about {
+        padding: 8rem 3rem;
+        background: linear-gradient(180deg, var(--color-sand-light) 0%, var(--color-plumeria-white) 100%);
+    }
+
+    .section-header {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 4rem;
+    }
+
+    .section-label {
+        display: inline-block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-sunset-coral);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--color-ocean-deep);
+        margin-bottom: 1.5rem;
+    }
+
+    .section-desc {
+        font-size: 1.15rem;
+        color: var(--color-text-muted);
+    }
+
+    .about-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .about-card {
+        background: white;
+        padding: 2.5rem;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(26, 58, 74, 0.06);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--color-sunset-gold) 0%, var(--color-sunset-coral) 100%);
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+    }
+
+    .about-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(26, 58, 74, 0.12);
+    }
+
+    .about-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .card-icon {
+        width: 64px;
+        height: 64px;
+        background: linear-gradient(135deg, var(--color-sand-light) 0%, var(--color-sand-warm) 100%);
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--color-ocean-deep);
+        margin-bottom: 1rem;
+    }
+
+    .card-text {
+        color: var(--color-text-muted);
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Mission Section */
+    .mission {
+        padding: 8rem 3rem;
+        background: var(--color-ocean-deep);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mission::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 60%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(232, 168, 73, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .mission-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+        align-items: center;
+    }
+
+    .mission-text .section-label {
+        color: var(--color-sunset-gold);
+    }
+
+    .mission-text .section-title {
+        color: white;
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .mission-text p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .mission-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+    }
+
+    .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .stat-number {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--color-sunset-gold);
+        display: block;
+    }
+
+    .stat-label {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+    }
+
+    .mission-visual {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .mission-card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .mission-card:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-5px);
+    }
+
+    .mission-card:first-child {
+        grid-column: span 2;
+    }
+
+    .mission-card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mission-card-title {
+        font-family: var(--font-display);
+        font-size: 1.2rem;
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+
+    .mission-card-text {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.95rem;
+    }
+
+    /* Activities Section */
+    .activities {
+        padding: 8rem 3rem;
+        background: var(--color-plumeria-white);
+    }
+
+    .activities-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .activity-card {
+        position: relative;
+        padding: 3rem;
+        border-radius: 24px;
+        overflow: hidden;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: transform 0.4s ease;
+    }
+
+    .activity-card:hover {
+        transform: scale(1.02);
+    }
+
+    .activity-card-1 {
+        background: linear-gradient(135deg, var(--color-palm-green) 0%, #3d6b4a 100%);
+    }
+
+    .activity-card-2 {
+        background: linear-gradient(135deg, var(--color-sunset-coral) 0%, #c4684d 100%);
+    }
+
+    .activity-card-3 {
+        background: linear-gradient(135deg, var(--color-ocean-mid) 0%, var(--color-ocean-deep) 100%);
+    }
+
+    .activity-card-4 {
+        background: linear-gradient(135deg, var(--color-sunset-gold) 0%, #d49535 100%);
+    }
+
+    .activity-bg-icon {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 6rem;
+        opacity: 0.2;
+    }
+
+    .activity-title {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        color: white;
+        margin-bottom: 0.75rem;
+    }
+
+    .activity-desc {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1rem;
+    }
+
+    /* Gift Economy Section */
+    .gift-economy {
+        padding: 8rem 3rem;
+        background: var(--color-sand-light);
+    }
+
+    .gift-content {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .gift-quote {
+        text-align: center;
+        padding: 4rem;
+        background: white;
+        border-radius: 32px;
+        box-shadow: 0 20px 60px rgba(26, 58, 74, 0.08);
+        position: relative;
+    }
+
+    .gift-quote::before {
+        content: '"';
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        font-family: var(--font-display);
+        font-size: 8rem;
+        color: var(--color-sunset-gold);
+        opacity: 0.2;
+        line-height: 1;
+    }
+
+    .gift-quote blockquote {
+        font-family: var(--font-display);
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--color-ocean-deep);
+        font-style: italic;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
+    }
+
+    .gift-quote cite {
+        color: var(--color-text-muted);
+        font-style: normal;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+
+    .gift-principles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .principle-item {
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .principle-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--color-sunset-gold) 0%, var(--color-sunset-coral) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 10px 30px rgba(232, 168, 73, 0.3);
+    }
+
+    .principle-title {
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        color: var(--color-ocean-deep);
+        margin-bottom: 0.75rem;
+    }
+
+    .principle-text {
+        color: var(--color-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Join Section */
+    .join {
+        padding: 8rem 3rem;
+        text-align: center;
+        background: var(--color-plumeria-white);
+    }
+
+    .join-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .join .section-title {
+        margin-bottom: 1.5rem;
+    }
+
+    .join-text {
+        font-size: 1.15rem;
+        color: var(--color-text-muted);
+        margin-bottom: 3rem;
+    }
+
+    .join-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .join-methods {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+    }
+
+    .method-card {
+        padding: 2rem 1.5rem;
+        background: var(--color-sand-light);
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+
+    .method-card:hover {
+        background: var(--color-sand-warm);
+        transform: translateY(-5px);
+    }
+
+    .method-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .method-title {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: var(--color-ocean-deep);
+        margin-bottom: 0.5rem;
+    }
+
+    .method-text {
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Footer */
+    footer {
+        background: var(--color-ocean-deep);
+        padding: 5rem 3rem 2rem;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 4rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand .logo-text {
+        color: white;
+    }
+
+    .footer-brand p {
+        color: rgba(255, 255, 255, 0.85);
+        margin-top: 1rem;
+        max-width: 300px;
+        line-height: 1.6;
+    }
+
+    .footer-column h4 {
+        color: white;
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-column ul {
+        list-style: none;
+    }
+
+    .footer-column li {
+        margin-bottom: 0.75rem;
+    }
+
+    .footer-column a {
+        color: rgba(255, 255, 255, 0.85);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+        color: var(--color-sunset-gold);
+    }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .social-link {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+        background: var(--color-sunset-gold);
+        transform: translateY(-3px);
+    }
+
+    /* Mobile Menu Button */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 101;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--color-ocean-deep);
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* Mobile Navigation */
+    @media (max-width: 768px) {
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: var(--color-plumeria-white);
+            padding: 6rem 2rem 2rem;
+            gap: 1.5rem;
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .nav-links a {
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+        }
+
+        .nav-cta {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+
+        .hero-subtitle {
+            margin: 0 auto 2rem;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .hero-visual {
+            order: -1;
+        }
+
+        .hero-image-container {
+            max-width: 350px;
+        }
+
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .mission-content {
+            grid-template-columns: 1fr;
+        }
+
+        .activities-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .gift-principles {
+            grid-template-columns: 1fr;
+        }
+
+        .join-methods {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 1rem 1.5rem;
+        }
+
+        .hero, .about, .mission, .activities, .gift-economy, .join {
+            padding: 5rem 1.5rem;
+        }
+
+        .hero-icon-main {
+            font-size: 5rem;
+        }
+
+        .float-icon {
+            font-size: 1.5rem;
+        }
+
+        .mission-visual {
+            grid-template-columns: 1fr;
+        }
+
+        .mission-card:first-child {
+            grid-column: span 1;
+        }
+
+        .join-methods {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .footer-bottom {
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+        }
+    }
+
+    /* Scroll Animations */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="bg-pattern"></div>
+
+```
+<header id="header">
+    <nav>
+        <a href="#" class="logo">
+            <div class="logo-icon">🌺</div>
+            <span class="logo-text">OHANA Association</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#mission">Mission</a></li>
+            <li><a href="#activities">Activities</a></li>
+            <li><a href="#gift-economy">Gift Economy</a></li>
+            <li><a href="#join" class="nav-cta">Join Us</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-text">
+            <div class="hero-tagline">
+                🌈 Rainbow State Community
+            </div>
+            <h1>Building Resilient Communities Through <span>Aloha Spirit</span></h1>
+            <p class="hero-subtitle">
+                We connect people, share resources, and strengthen communities through the Hawaiian tradition of ohana — because family extends beyond blood.
+            </p>
+            <div class="hero-buttons">
+                <a href="mailto:business@satotakuya.jp?subject=OHANA%20Association%20Volunteer%20Inquiry" class="btn-primary">
+                    Join Our Ohana
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#about" class="btn-secondary">
+                    Learn More
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-container">
+                <div class="hero-circle hero-circle-1"></div>
+                <div class="hero-circle hero-circle-2"></div>
+                <div class="hero-circle hero-circle-3"></div>
+                <div class="hero-icon-main">🤝</div>
+                <div class="floating-icons">
+                    <span class="float-icon float-icon-1">🌴</span>
+                    <span class="float-icon float-icon-2">🌊</span>
+                    <span class="float-icon float-icon-3">☀️</span>
+                    <span class="float-icon float-icon-4">🐢</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 150" preserveAspectRatio="none">
+        <path fill="var(--color-sand-light)" d="M0,64 C288,120 576,20 864,64 C1152,108 1296,40 1440,64 L1440,150 L0,150 Z"></path>
+    </svg>
+</section>
+
+<section class="about" id="about">
+    <div class="section-header fade-in">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-title">Ohana Means Family</h2>
+        <p class="section-desc">
+            In Hawaiian culture, ohana refers to family in a broad sense — including blood relatives, adoptive kin, and intentional family. No one gets left behind.
+        </p>
+    </div>
+    <div class="about-grid">
+        <div class="about-card fade-in">
+            <div class="card-icon">🏠</div>
+            <h3 class="card-title">Community Resilience</h3>
+            <p class="card-text">
+                Supporting disaster recovery and building sustainable infrastructure that helps communities thrive in challenging times.
+            </p>
+        </div>
+        <div class="about-card fade-in">
+            <div class="card-icon">🎁</div>
+            <h3 class="card-title">Gift Economy</h3>
+            <p class="card-text">
+                Practicing the art of giving without expectation, building trust and abundance through generosity and reciprocity.
+            </p>
+        </div>
+        <div class="about-card fade-in">
+            <div class="card-icon">🌿</div>
+            <h3 class="card-title">Cultural Preservation</h3>
+            <p class="card-text">
+                Honoring and protecting Hawaiian traditions, sacred lands, and indigenous knowledge for future generations.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="mission" id="mission">
+    <div class="mission-content">
+        <div class="mission-text fade-in">
+            <span class="section-label">Our Mission</span>
+            <h2 class="section-title">Strengthening Maui Through Connection</h2>
+            <p>
+                After the 2023 Lahaina fires, our community came together like never before. OHANA Association was born from this spirit of mutual aid and collective healing.
+            </p>
+            <p>
+                We believe that true resilience comes not from individual strength, but from the bonds we form with one another. Through volunteer work, skill-sharing, and resource pooling, we're rebuilding not just infrastructure — but hope.
+            </p>
+            <div class="mission-stats">
+                <div class="stat-item">
+                    <span class="stat-number">170+</span>
+                    <span class="stat-label">Countries Connected</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">25</span>
+                    <span class="stat-label">Hours Weekly Service</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">∞</span>
+                    <span class="stat-label">Aloha Shared</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Ohana</span>
+                </div>
+            </div>
+        </div>
+        <div class="mission-visual fade-in">
+            <div class="mission-card">
+                <span class="mission-card-icon">🔥</span>
+                <h3 class="mission-card-title">Lahaina Strong</h3>
+                <p class="mission-card-text">Supporting fire-affected families with housing, resources, and community connection.</p>
+            </div>
+            <div class="mission-card">
+                <span class="mission-card-icon">☀️</span>
+                <h3 class="mission-card-title">Solar Power</h3>
+                <p class="mission-card-text">Off-grid energy solutions</p>
+            </div>
+            <div class="mission-card">
+                <span class="mission-card-icon">🌊</span>
+                <h3 class="mission-card-title">Bay Protection</h3>
+                <p class="mission-card-text">Environmental conservation</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="activities" id="activities">
+    <div class="section-header fade-in">
+        <span class="section-label">What We Do</span>
+        <h2 class="section-title">Our Activities</h2>
+        <p class="section-desc">
+            From technical infrastructure to cultural events, we bring diverse skills together to serve our community.
+        </p>
+    </div>
+    <div class="activities-grid">
+        <div class="activity-card activity-card-1 fade-in">
+            <span class="activity-bg-icon">⚡</span>
+            <h3 class="activity-title">Off-Grid Infrastructure</h3>
+            <p class="activity-desc">Building sustainable solar systems, water management, and communication networks for remote communities.</p>
+        </div>
+        <div class="activity-card activity-card-2 fade-in">
+            <span class="activity-bg-icon">🌺</span>
+            <h3 class="activity-title">Cultural Exchange</h3>
+            <p class="activity-desc">Connecting international volunteers with local families, sharing traditions and building cross-cultural friendships.</p>
+        </div>
+        <div class="activity-card activity-card-3 fade-in">
+            <span class="activity-bg-icon">🌱</span>
+            <h3 class="activity-title">Environmental Conservation</h3>
+            <p class="activity-desc">Protecting Honolua Bay, supporting native species, and practicing sustainable land management.</p>
+        </div>
+        <div class="activity-card activity-card-4 fade-in">
+            <span class="activity-bg-icon">🤗</span>
+            <h3 class="activity-title">Tutu Network</h3>
+            <p class="activity-desc">Building intergenerational connections for childcare, elder support, and wisdom sharing.</p>
+        </div>
+    </div>
+</section>
+
+<section class="gift-economy" id="gift-economy">
+    <div class="gift-content">
+        <div class="section-header fade-in">
+            <span class="section-label">Our Philosophy</span>
+            <h2 class="section-title">The Gift Economy</h2>
+        </div>
+        <div class="gift-quote fade-in">
+            <blockquote>
+                When we lead with giving — without expectation — we create ripples of abundance that return in unexpected and beautiful ways.
+            </blockquote>
+            <cite>— OHANA Association Core Principle</cite>
+        </div>
+        <div class="gift-principles">
+            <div class="principle-item fade-in">
+                <div class="principle-icon">💝</div>
+                <h3 class="principle-title">Give First</h3>
+                <p class="principle-text">Create value before asking. A small gesture can open doors worth far more than money.</p>
+            </div>
+            <div class="principle-item fade-in">
+                <div class="principle-icon">🔄</div>
+                <h3 class="principle-title">Trust the Flow</h3>
+                <p class="principle-text">What goes around comes around. Generosity creates its own currency of trust.</p>
+            </div>
+            <div class="principle-item fade-in">
+                <div class="principle-icon">🌈</div>
+                <h3 class="principle-title">Build Relationships</h3>
+                <p class="principle-text">Face and story matter more than transactions. Be remembered for who you are.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="join" id="join">
+    <div class="join-content fade-in">
+        <span class="section-label">Get Involved</span>
+        <h2 class="section-title">Join Our Ohana</h2>
+        <p class="join-text">
+            Whether you're local to Maui or joining us from across the globe, there's a place for you in our family. Bring your skills, your stories, and your spirit of aloha.
+        </p>
+        <div class="join-buttons">
+            <a href="mailto:business@satotakuya.jp?subject=OHANA%20Association%20Volunteer%20Inquiry" class="btn-primary">
+                Become a Volunteer
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <a href="mailto:business@satotakuya.jp?subject=OHANA%20Association%20Support%20Inquiry" class="btn-secondary">
+                Support Our Work
+            </a>
+        </div>
+        <div class="join-methods">
+            <div class="method-card">
+                <div class="method-icon">🛠️</div>
+                <h3 class="method-title">Skills</h3>
+                <p class="method-text">Share your expertise — technical, creative, or practical</p>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">⏰</div>
+                <h3 class="method-title">Time</h3>
+                <p class="method-text">Volunteer for projects that matter to you</p>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">💰</div>
+                <h3 class="method-title">Resources</h3>
+                <p class="method-text">Donate materials, equipment, or funds</p>
+            </div>
+            <div class="method-card">
+                <div class="method-icon">📣</div>
+                <h3 class="method-title">Voice</h3>
+                <p class="method-text">Spread the word and amplify our mission</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-brand">
+            <a href="#" class="logo">
+                <div class="logo-icon">🌺</div>
+                <span class="logo-text">OHANA Association</span>
+            </a>
+            <p>Building resilient communities through the spirit of aloha, one connection at a time.</p>
+        </div>
+        <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#mission">Our Mission</a></li>
+                <li><a href="#activities">Activities</a></li>
+                <li><a href="#gift-economy">Gift Economy</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Get Involved</h4>
+            <ul>
+                <li><a href="mailto:business@satotakuya.jp?subject=OHANA%20Volunteer">Volunteer</a></li>
+                <li><a href="mailto:business@satotakuya.jp?subject=OHANA%20Donation">Donate</a></li>
+                <li><a href="mailto:business@satotakuya.jp?subject=OHANA%20Partnership">Partner With Us</a></li>
+                <li><a href="mailto:business@satotakuya.jp?subject=OHANA%20Inquiry">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Location</h4>
+            <ul>
+                <li><a href="#">Honolua Bay Farm</a></li>
+                <li><a href="#">Maui, Hawaii</a></li>
+                <li><a href="#">United States</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2025 OHANA Association. Made with aloha 🌺</p>
+        <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">📷</a>
+            <a href="#" class="social-link" aria-label="Facebook">📘</a>
+            <a href="mailto:business@satotakuya.jp" class="social-link" aria-label="Email">✉️</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Mobile menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    });
+
+    // Scroll animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+</script>
+```
+
+</body>
+</html>
