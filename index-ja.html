@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OHANA Association | Community Resilience & Gift Economy</title>
+    <title>OHANA Association | コミュニティレジリエンス＆ギフトエコノミー</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
             --color-ocean-deep: #0f2a38;
@@ -21,8 +21,8 @@
             --color-plumeria-white: #fefcf9;
             --color-lava-black: #1a1a1a;
             --color-text-muted: #4a5a62;
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-body: 'Source Sans 3', -apple-system, sans-serif;
+            --font-display: 'Noto Serif JP', 'Playfair Display', Georgia, serif;
+            --font-body: 'Noto Sans JP', -apple-system, sans-serif;
         }
 
 ```
@@ -40,7 +40,7 @@
         font-family: var(--font-body);
         background-color: #fefcf9;
         color: var(--color-lava-black);
-        line-height: 1.7;
+        line-height: 1.8;
         overflow-x: hidden;
     }
 
@@ -96,7 +96,7 @@
 
     .logo-text {
         font-family: var(--font-display);
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: var(--color-ocean-deep);
         letter-spacing: 0.02em;
@@ -214,20 +214,20 @@
 
     .hero-text h1 {
         font-family: var(--font-display);
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2rem, 4.5vw, 3.5rem);
         font-weight: 700;
         color: var(--color-ocean-deep);
-        line-height: 1.15;
+        line-height: 1.4;
         margin-bottom: 1.5rem;
     }
 
     .hero-text h1 span {
         color: var(--color-sunset-coral);
-        font-style: italic;
+        font-style: normal;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         color: var(--color-text-muted);
         margin-bottom: 2rem;
         max-width: 520px;
@@ -407,14 +407,15 @@
 
     .section-title {
         font-family: var(--font-display);
-        font-size: clamp(2rem, 4vw, 3rem);
+        font-size: clamp(1.8rem, 3.5vw, 2.5rem);
         color: var(--color-ocean-deep);
         margin-bottom: 1.5rem;
     }
 
     .section-desc {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         color: var(--color-text-muted);
+        line-height: 1.8;
     }
 
     .about-grid {
@@ -470,15 +471,15 @@
 
     .card-title {
         font-family: var(--font-display);
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         color: var(--color-ocean-deep);
         margin-bottom: 1rem;
     }
 
     .card-text {
         color: var(--color-text-muted);
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.8;
     }
 
     /* Mission Section */
@@ -521,8 +522,9 @@
 
     .mission-text p {
         color: rgba(255, 255, 255, 0.9);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         margin-bottom: 1.5rem;
+        line-height: 1.9;
     }
 
     .mission-stats {
@@ -585,14 +587,15 @@
 
     .mission-card-title {
         font-family: var(--font-display);
-        font-size: 1.2rem;
+        font-size: 1.15rem;
         color: white;
         margin-bottom: 0.5rem;
     }
 
     .mission-card-text {
         color: rgba(255, 255, 255, 0.85);
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        line-height: 1.7;
     }
 
     /* Activities Section */
@@ -651,14 +654,15 @@
 
     .activity-title {
         font-family: var(--font-display);
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         color: white;
         margin-bottom: 0.75rem;
     }
 
     .activity-desc {
-        color: rgba(255, 255, 255, 0.85);
-        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 
     /* Gift Economy Section */
@@ -686,7 +690,7 @@
         position: absolute;
         top: 1rem;
         left: 2rem;
-        font-family: var(--font-display);
+        font-family: 'Playfair Display', serif;
         font-size: 8rem;
         color: var(--color-sunset-gold);
         opacity: 0.2;
@@ -695,10 +699,10 @@
 
     .gift-quote blockquote {
         font-family: var(--font-display);
-        font-size: clamp(1.5rem, 3vw, 2rem);
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
         color: var(--color-ocean-deep);
-        font-style: italic;
-        line-height: 1.5;
+        font-style: normal;
+        line-height: 1.7;
         margin-bottom: 1.5rem;
     }
 
@@ -736,15 +740,15 @@
 
     .principle-title {
         font-family: var(--font-display);
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         color: var(--color-ocean-deep);
         margin-bottom: 0.75rem;
     }
 
     .principle-text {
         color: var(--color-text-muted);
-        font-size: 0.95rem;
-        line-height: 1.6;
+        font-size: 0.9rem;
+        line-height: 1.7;
     }
 
     /* Join Section */
@@ -764,9 +768,10 @@
     }
 
     .join-text {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         color: var(--color-text-muted);
         margin-bottom: 3rem;
+        line-height: 1.8;
     }
 
     .join-buttons {
@@ -802,15 +807,15 @@
 
     .method-title {
         font-family: var(--font-display);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         color: var(--color-ocean-deep);
         margin-bottom: 0.5rem;
     }
 
     .method-text {
         color: var(--color-text-muted);
-        font-size: 0.9rem;
-        line-height: 1.5;
+        font-size: 0.85rem;
+        line-height: 1.6;
     }
 
     /* Footer */
@@ -837,13 +842,13 @@
         color: rgba(255, 255, 255, 0.85);
         margin-top: 1rem;
         max-width: 300px;
-        line-height: 1.6;
+        line-height: 1.7;
     }
 
     .footer-column h4 {
         color: white;
         font-family: var(--font-display);
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         margin-bottom: 1.5rem;
     }
 
@@ -1082,14 +1087,14 @@
             <span class="logo-text">OHANA Association</span>
         </a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#activities">Activities</a></li>
-            <li><a href="#gift-economy">Gift Economy</a></li>
-            <li><a href="#join" class="nav-cta">Join Us</a></li>
-            <li><a href="index-ja.html" class="lang-switch">🇯🇵 日本語</a></li>
+            <li><a href="#about">私たちについて</a></li>
+            <li><a href="#mission">ミッション</a></li>
+            <li><a href="#activities">活動内容</a></li>
+            <li><a href="#gift-economy">ギフトエコノミー</a></li>
+            <li><a href="#join" class="nav-cta">参加する</a></li>
+            <li><a href="index.html" class="lang-switch">🇺🇸 English</a></li>
         </ul>
-        <button class="menu-toggle" aria-label="Toggle menu">
+        <button class="menu-toggle" aria-label="メニューを開く">
             <span></span>
             <span></span>
             <span></span>
@@ -1102,21 +1107,21 @@
     <div class="hero-content">
         <div class="hero-text">
             <div class="hero-tagline">
-                🌈 Rainbow State Community
+                🌈 レインボーステート・コミュニティ
             </div>
-            <h1>Building Resilient Communities Through <span>Aloha Spirit</span></h1>
+            <h1><span>アロハの精神</span>で<br>レジリエントな<br>コミュニティを築く</h1>
             <p class="hero-subtitle">
-                We connect people, share resources, and strengthen communities through the Hawaiian tradition of ohana — because family extends beyond blood.
+                人と人をつなぎ、資源を分かち合い、ハワイの伝統「オハナ」の精神でコミュニティを強くする。家族は血のつながりを超えて広がります。
             </p>
             <div class="hero-buttons">
                 <a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                    Join Our Ohana
+                    オハナに参加する
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
                 <a href="#about" class="btn-secondary">
-                    Learn More
+                    詳しく見る
                 </a>
             </div>
         </div>
@@ -1142,32 +1147,32 @@
 
 <section class="about" id="about">
     <div class="section-header fade-in">
-        <span class="section-label">Who We Are</span>
-        <h2 class="section-title">Ohana Means Family</h2>
+        <span class="section-label">私たちについて</span>
+        <h2 class="section-title">オハナは「家族」を意味します</h2>
         <p class="section-desc">
-            In Hawaiian culture, ohana refers to family in a broad sense — including blood relatives, adoptive kin, and intentional family. No one gets left behind.
+            ハワイ文化において「オハナ」とは広い意味での家族を指します。血縁関係だけでなく、養子縁組や意図的に築いた家族も含まれます。誰一人取り残さない。それがオハナの精神です。
         </p>
     </div>
     <div class="about-grid">
         <div class="about-card fade-in">
             <div class="card-icon">🏠</div>
-            <h3 class="card-title">Community Resilience</h3>
+            <h3 class="card-title">コミュニティレジリエンス</h3>
             <p class="card-text">
-                Supporting disaster recovery and building sustainable infrastructure that helps communities thrive in challenging times.
+                災害復旧を支援し、困難な時代でもコミュニティが繁栄できる持続可能なインフラを構築します。
             </p>
         </div>
         <div class="about-card fade-in">
             <div class="card-icon">🎁</div>
-            <h3 class="card-title">Gift Economy</h3>
+            <h3 class="card-title">ギフトエコノミー</h3>
             <p class="card-text">
-                Practicing the art of giving without expectation, building trust and abundance through generosity and reciprocity.
+                見返りを期待せず与える。寛大さと互恵性を通じて信頼と豊かさを築く技術を実践します。
             </p>
         </div>
         <div class="about-card fade-in">
             <div class="card-icon">🌿</div>
-            <h3 class="card-title">Cultural Preservation</h3>
+            <h3 class="card-title">文化の保存</h3>
             <p class="card-text">
-                Honoring and protecting Hawaiian traditions, sacred lands, and indigenous knowledge for future generations.
+                ハワイの伝統、聖地、先住民の知恵を尊重し、次世代のために守り続けます。
             </p>
         </div>
     </div>
@@ -1176,48 +1181,48 @@
 <section class="mission" id="mission">
     <div class="mission-content">
         <div class="mission-text fade-in">
-            <span class="section-label">Our Mission</span>
-            <h2 class="section-title">Strengthening Maui Through Connection</h2>
+            <span class="section-label">ミッション</span>
+            <h2 class="section-title">つながりでマウイを強くする</h2>
             <p>
-                After the 2023 Lahaina fires, our community came together like never before. OHANA Association was born from this spirit of mutual aid and collective healing.
+                2023年のラハイナ大火災の後、私たちのコミュニティはかつてないほど結束しました。OHANA Associationは、この相互扶助と集団的な癒しの精神から生まれました。
             </p>
             <p>
-                We believe that true resilience comes not from individual strength, but from the bonds we form with one another. Through volunteer work, skill-sharing, and resource pooling, we're rebuilding not just infrastructure — but hope.
+                真のレジリエンスは個人の強さからではなく、互いに築く絆から生まれると私たちは信じています。ボランティア活動、スキルの共有、リソースの共同利用を通じて、インフラだけでなく希望も再建しています。
             </p>
             <div class="mission-stats">
                 <div class="stat-item">
                     <span class="stat-number">170+</span>
-                    <span class="stat-label">Countries Connected</span>
+                    <span class="stat-label">つながる国々</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">25</span>
-                    <span class="stat-label">Hours Weekly Service</span>
+                    <span class="stat-label">週間ボランティア時間</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">∞</span>
-                    <span class="stat-label">Aloha Shared</span>
+                    <span class="stat-label">分かち合うアロハ</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">1</span>
-                    <span class="stat-label">Ohana</span>
+                    <span class="stat-label">オハナ</span>
                 </div>
             </div>
         </div>
         <div class="mission-visual fade-in">
             <div class="mission-card">
                 <span class="mission-card-icon">🔥</span>
-                <h3 class="mission-card-title">Lahaina Strong</h3>
-                <p class="mission-card-text">Supporting fire-affected families with housing, resources, and community connection.</p>
+                <h3 class="mission-card-title">ラハイナ・ストロング</h3>
+                <p class="mission-card-text">火災被災家族への住居、物資、コミュニティとのつながりを支援</p>
             </div>
             <div class="mission-card">
                 <span class="mission-card-icon">☀️</span>
-                <h3 class="mission-card-title">Solar Power</h3>
-                <p class="mission-card-text">Off-grid energy solutions</p>
+                <h3 class="mission-card-title">ソーラーパワー</h3>
+                <p class="mission-card-text">オフグリッドエネルギー</p>
             </div>
             <div class="mission-card">
                 <span class="mission-card-icon">🌊</span>
-                <h3 class="mission-card-title">Bay Protection</h3>
-                <p class="mission-card-text">Environmental conservation</p>
+                <h3 class="mission-card-title">湾の保護</h3>
+                <p class="mission-card-text">環境保全活動</p>
             </div>
         </div>
     </div>
@@ -1225,32 +1230,32 @@
 
 <section class="activities" id="activities">
     <div class="section-header fade-in">
-        <span class="section-label">What We Do</span>
-        <h2 class="section-title">Our Activities</h2>
+        <span class="section-label">活動内容</span>
+        <h2 class="section-title">私たちの活動</h2>
         <p class="section-desc">
-            From technical infrastructure to cultural events, we bring diverse skills together to serve our community.
+            技術インフラから文化イベントまで、多様なスキルを結集してコミュニティに貢献します。
         </p>
     </div>
     <div class="activities-grid">
         <div class="activity-card activity-card-1 fade-in">
             <span class="activity-bg-icon">⚡</span>
-            <h3 class="activity-title">Off-Grid Infrastructure</h3>
-            <p class="activity-desc">Building sustainable solar systems, water management, and communication networks for remote communities.</p>
+            <h3 class="activity-title">オフグリッドインフラ</h3>
+            <p class="activity-desc">遠隔地コミュニティ向けの持続可能なソーラーシステム、水管理、通信ネットワークを構築。</p>
         </div>
         <div class="activity-card activity-card-2 fade-in">
             <span class="activity-bg-icon">🌺</span>
-            <h3 class="activity-title">Cultural Exchange</h3>
-            <p class="activity-desc">Connecting international volunteers with local families, sharing traditions and building cross-cultural friendships.</p>
+            <h3 class="activity-title">文化交流</h3>
+            <p class="activity-desc">国際ボランティアと地元家族をつなぎ、伝統を共有し、異文化間の友情を築きます。</p>
         </div>
         <div class="activity-card activity-card-3 fade-in">
             <span class="activity-bg-icon">🌱</span>
-            <h3 class="activity-title">Environmental Conservation</h3>
-            <p class="activity-desc">Protecting Honolua Bay, supporting native species, and practicing sustainable land management.</p>
+            <h3 class="activity-title">環境保全</h3>
+            <p class="activity-desc">ホノルア湾の保護、在来種の支援、持続可能な土地管理を実践。</p>
         </div>
         <div class="activity-card activity-card-4 fade-in">
             <span class="activity-bg-icon">🤗</span>
-            <h3 class="activity-title">Tutu Network</h3>
-            <p class="activity-desc">Building intergenerational connections for childcare, elder support, and wisdom sharing.</p>
+            <h3 class="activity-title">ツツ・ネットワーク</h3>
+            <p class="activity-desc">育児、高齢者支援、知恵の共有のための世代間のつながりを構築。</p>
         </div>
     </div>
 </section>
@@ -1258,30 +1263,30 @@
 <section class="gift-economy" id="gift-economy">
     <div class="gift-content">
         <div class="section-header fade-in">
-            <span class="section-label">Our Philosophy</span>
-            <h2 class="section-title">The Gift Economy</h2>
+            <span class="section-label">私たちの哲学</span>
+            <h2 class="section-title">ギフトエコノミー</h2>
         </div>
         <div class="gift-quote fade-in">
             <blockquote>
-                When we lead with giving — without expectation — we create ripples of abundance that return in unexpected and beautiful ways.
+                期待せずに与えることから始めれば、予想もしなかった美しい形で豊かさの波紋が返ってきます。
             </blockquote>
-            <cite>— OHANA Association Core Principle</cite>
+            <cite>— OHANA Association 基本理念</cite>
         </div>
         <div class="gift-principles">
             <div class="principle-item fade-in">
                 <div class="principle-icon">💝</div>
-                <h3 class="principle-title">Give First</h3>
-                <p class="principle-text">Create value before asking. A small gesture can open doors worth far more than money.</p>
+                <h3 class="principle-title">まず与える</h3>
+                <p class="principle-text">求める前に価値を創造する。小さな行為がお金以上の価値を持つ扉を開くことがあります。</p>
             </div>
             <div class="principle-item fade-in">
                 <div class="principle-icon">🔄</div>
-                <h3 class="principle-title">Trust the Flow</h3>
-                <p class="principle-text">What goes around comes around. Generosity creates its own currency of trust.</p>
+                <h3 class="principle-title">流れを信じる</h3>
+                <p class="principle-text">与えたものは巡り巡って返ってくる。寛大さは信頼という独自の通貨を生み出します。</p>
             </div>
             <div class="principle-item fade-in">
                 <div class="principle-icon">🌈</div>
-                <h3 class="principle-title">Build Relationships</h3>
-                <p class="principle-text">Face and story matter more than transactions. Be remembered for who you are.</p>
+                <h3 class="principle-title">関係性を築く</h3>
+                <p class="principle-text">取引よりも顔と物語が大切。あなたが誰であるかで記憶されましょう。</p>
             </div>
         </div>
     </div>
@@ -1289,42 +1294,42 @@
 
 <section class="join" id="join">
     <div class="join-content fade-in">
-        <span class="section-label">Get Involved</span>
-        <h2 class="section-title">Join Our Ohana</h2>
+        <span class="section-label">参加方法</span>
+        <h2 class="section-title">オハナに参加しませんか</h2>
         <p class="join-text">
-            Whether you're local to Maui or joining us from across the globe, there's a place for you in our family. Bring your skills, your stories, and your spirit of aloha.
+            マウイ在住の方も、世界中から参加する方も、私たちの家族にはあなたの居場所があります。あなたのスキル、ストーリー、そしてアロハの精神をお持ちください。
         </p>
         <div class="join-buttons">
             <a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer" class="btn-primary">
-                Become a Volunteer
+                ボランティアになる
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
             </a>
             <a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-                Support Our Work
+                活動を支援する
             </a>
         </div>
         <div class="join-methods">
             <div class="method-card">
                 <div class="method-icon">🛠️</div>
-                <h3 class="method-title">Skills</h3>
-                <p class="method-text">Share your expertise — technical, creative, or practical</p>
+                <h3 class="method-title">スキル</h3>
+                <p class="method-text">技術的、創造的、実践的なあなたの専門知識を共有</p>
             </div>
             <div class="method-card">
                 <div class="method-icon">⏰</div>
-                <h3 class="method-title">Time</h3>
-                <p class="method-text">Volunteer for projects that matter to you</p>
+                <h3 class="method-title">時間</h3>
+                <p class="method-text">あなたにとって意義のあるプロジェクトにボランティア参加</p>
             </div>
             <div class="method-card">
                 <div class="method-icon">💰</div>
-                <h3 class="method-title">Resources</h3>
-                <p class="method-text">Donate materials, equipment, or funds</p>
+                <h3 class="method-title">リソース</h3>
+                <p class="method-text">資材、機材、資金を寄付</p>
             </div>
             <div class="method-card">
                 <div class="method-icon">📣</div>
-                <h3 class="method-title">Voice</h3>
-                <p class="method-text">Spread the word and amplify our mission</p>
+                <h3 class="method-title">発信</h3>
+                <p class="method-text">私たちのミッションを広め、声を届ける</p>
             </div>
         </div>
     </div>
@@ -1337,32 +1342,32 @@
                 <div class="logo-icon">🌺</div>
                 <span class="logo-text">OHANA Association</span>
             </a>
-            <p>Building resilient communities through the spirit of aloha, one connection at a time.</p>
+            <p>アロハの精神で、一つ一つのつながりを通じて、レジリエントなコミュニティを築いています。</p>
         </div>
         <div class="footer-column">
-            <h4>Navigation</h4>
+            <h4>ナビゲーション</h4>
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#mission">Our Mission</a></li>
-                <li><a href="#activities">Activities</a></li>
-                <li><a href="#gift-economy">Gift Economy</a></li>
+                <li><a href="#about">私たちについて</a></li>
+                <li><a href="#mission">ミッション</a></li>
+                <li><a href="#activities">活動内容</a></li>
+                <li><a href="#gift-economy">ギフトエコノミー</a></li>
             </ul>
         </div>
         <div class="footer-column">
-            <h4>Get Involved</h4>
+            <h4>参加する</h4>
             <ul>
-                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">Volunteer</a></li>
-                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">Donate</a></li>
-                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">Partner With Us</a></li>
-                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">ボランティア</a></li>
+                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">寄付する</a></li>
+                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">パートナーになる</a></li>
+                <li><a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer">お問い合わせ</a></li>
             </ul>
         </div>
         <div class="footer-column">
-            <h4>Location</h4>
+            <h4>所在地</h4>
             <ul>
-                <li><a href="#">Honolua Bay Farm</a></li>
-                <li><a href="#">Maui, Hawaii</a></li>
-                <li><a href="#">United States</a></li>
+                <li><a href="#">ホノルア・ベイ・ファーム</a></li>
+                <li><a href="#">マウイ島、ハワイ州</a></li>
+                <li><a href="#">アメリカ合衆国</a></li>
             </ul>
         </div>
     </div>
@@ -1371,12 +1376,12 @@
         <div class="social-links">
             <a href="https://www.workaway.info/en/workawayer/pearlmemorial/overview" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Workaway">🌍</a>
             <a href="https://www.trustedhousesitters.com/house-and-pet-sitters/united-states/hawaii/lahaina/l/7281399/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TrustedHousesitters">🏠</a>
-            <a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Book">📅</a>
+            <a href="https://calendly.com/ohana-association" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="予約">📅</a>
         </div>
     </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
